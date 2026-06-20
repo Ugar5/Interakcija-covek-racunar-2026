@@ -1,0 +1,10 @@
+.toy{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.card{
+    max-width: 15em;
+}

@@ -1,0 +1,26 @@
+<div class="input-group-text mb-3">
+        <span class="input-group-text" id="addon">
+            <i class="fa-solid fa-magnifying-glass"></i><input type="text" class="form-control" placeholder="Search" aria-describedby="addon" [(ngModel)]="search" (keyup)="loadToys()">
+        </span>
+        
+    </div>
+<div class="toy">
+    
+@for (toys of toys(); track $index) {
+  <div class="card" style="width: 18rem">
+    <img [src]="'https://toy.pequla.com' + toys.imageUrl " class="card-img-top" [alt]="toys.name" />
+    <div class="card-body">
+      <h5 class="card-title">{{toys.name}}</h5>
+      <p class="card-text">
+       {{toys.targetGroup}}
+      </p>
+      <div class="card-footer btn-group">
+        <a [routerLink]="`/toys/${toys.ageGroup}`" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i>Details</a>
+        <div class="btn btn-sm btn-success">
+            <i class="fa-solid fa-cart-shopping"></i>Add to Cart
+        </div>
+      </div>
+    </div>
+  </div>
+}
+</div>
